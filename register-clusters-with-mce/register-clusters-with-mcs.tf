@@ -6,7 +6,7 @@ resource "google_gke_hub_membership" "toronto_cluster_membership" {
   membership_id = "toronto-gke-cluster"
   endpoint {
     gke_cluster {
-     resource_link = "//container.googleapis.com/projects/pingdirectory-358917/regions/northamerica-northeast2/clusters/gke-toronto"
+     resource_link = "//container.googleapis.com/projects/pingdirectory-358917/locations/northamerica-northeast2/clusters/gke-toronto"
     }
   }
 }
@@ -19,7 +19,7 @@ resource "google_gke_hub_membership" "montreal_cluster_membership" {
   membership_id = "montreal-gke-cluster"
   endpoint {
     gke_cluster {
-     resource_link = "//container.googleapis.com/projects/pingdirectory-358917/regions/northamerica-northeast1/clusters/gke-montreal"
+     resource_link = "//container.googleapis.com/projects/pingdirectory-358917/locations/northamerica-northeast1/clusters/gke-montreal"
     }
   }
 }
