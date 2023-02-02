@@ -30,7 +30,7 @@ module "gke" {
       name                      = "montreal-ping-stack-node-pool"
       machine_type              = "e2-standard-2"
       node_locations            = "northamerica-northeast1-a"
-      min_count                 = 1
+      min_count                 = 2
       max_count                 = 3
       local_ssd_count           = 0
       spot                      = true #needs to be changed in a prod-environment
