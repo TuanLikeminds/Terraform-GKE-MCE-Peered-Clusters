@@ -44,7 +44,7 @@ module "gke" {
       version                   = "1.25.5-gke.2000"
       service_account           = "toronto-gke-sa@pingdirectory-358917.iam.gserviceaccount.com"
       preemptible               = false
-      initial_node_count        = 2
+      initial_node_count        = 1
     },
   ]
 
