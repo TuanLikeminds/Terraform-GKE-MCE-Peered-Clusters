@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    google-beta = {
-      source = "hashicorp/google-beta"
-      version = "3.67.0"
-    }
-  }
-}
 
 #TORONTO GKE CLUSTER MEMBERSHIP
 resource "google_gke_hub_membership" "toronto_cluster_membership" {
