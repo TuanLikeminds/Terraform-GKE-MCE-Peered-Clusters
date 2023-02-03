@@ -3,6 +3,13 @@ resource "google_service_account" "toronto_gke_sa" {
   display_name = "Toronto GKE Service Account"
 }
 
+
+resource "google_project_iam_binding" "bind_toronto_gke_sa_to_artifact_registry" {
+  project = "pingdirectory-358917"
+  role    = "roles/artifactregistry.viewer"
+  members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
+}
+
 resource "google_project_iam_binding" "toronto_gke_sa_binding" {
   project = "pingdirectory-358917"
   role    = "roles/compute.viewer"
