@@ -6,7 +6,7 @@ resource "google_service_account" "toronto_gke_sa" {
 
 resource "google_project_iam_binding" "bind_toronto_gke_sa_to_artifact_registry" {
   project = "pingdirectory-358917"
-  role    = "roles/artifactregistry.viewer"
+  role    = "roles/artifactregistry.reader"
   members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
 }
 
