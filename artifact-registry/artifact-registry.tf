@@ -1,6 +1,5 @@
 resource "google_artifact_registry_repository" "my-repo" {
   provider = google-beta
-
   location = "northamerica-notheast1"
   repository_id = "likeminds-ping-images"
   description = "to host custom docker images created by google cloud build to be used by ping pods on GKE"
