@@ -3,6 +3,12 @@ resource "google_service_account" "montreal_gke_sa" {
   display_name = "montreal GKE Service Account"
 }
 
+resource "google_project_iam_binding" "bind_montreal_gke_sa_to_artifact_registry" {
+  project = "pingdirectory-358917"
+  role    = "roles/artifactregistry.writer"
+  members = ["serviceAccount:${google_service_account.montreal_gke_sa.email}"]
+}
+
 resource "google_project_iam_binding" "montreal_gke_sa_binding" {
   project = "pingdirectory-358917"
   role    = "roles/compute.viewer"
