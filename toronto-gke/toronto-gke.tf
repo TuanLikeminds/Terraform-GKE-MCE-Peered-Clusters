@@ -31,7 +31,7 @@ module "gke" {
       machine_type              = "e2-standard-2"
       node_locations            = "northamerica-northeast2-a"
       min_count                 = 1
-      max_count                 = 3
+      max_count                 = 1
       local_ssd_count           = 0
       spot                      = true #needs to be changed in a prod-environment
       disk_size_gb              = 25
@@ -44,7 +44,7 @@ module "gke" {
       version                   = "1.25.5-gke.2000"
       service_account           = "toronto-gke-sa@pingdirectory-358917.iam.gserviceaccount.com"
       preemptible               = false
-      initial_node_count        = 2
+      initial_node_count        = 1
     },
   ]
 
