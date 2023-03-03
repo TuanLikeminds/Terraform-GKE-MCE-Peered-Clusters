@@ -55,12 +55,13 @@ resource "google_project_iam_binding" "toronto_gke_sa_binding_projectIamAdmin" {
 
 resource "google_secret_manager_secret_iam_member" "iam_secrets_gcp_secrets" {
   secret_id  = "*"
+  project = "pingdirectory-358917"
   role       = "roles/secretmanager.visecretAccessor"
   member     = "serviceAccount:${google_service_account.toronto_gke_sa.email}"
 }
 
 resource "google_project_iam_binding" "iam_secrets_gcp_secrets_binding" {
-  project = "my-project"
+  project = "pingdirectory-358917"
   members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
   role = "roles/secretmanager.secretAccessor "
 }
