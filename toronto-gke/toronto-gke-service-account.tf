@@ -53,15 +53,9 @@ resource "google_project_iam_binding" "toronto_gke_sa_binding_projectIamAdmin" {
 }
 
 
-resource "google_project_iam_binding" "toronto_gke_sa_binding_secrets_user" {
-  project = "pingdirectory-358917"
-  members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
-  role = "roles/secretmanager.viewer"
+resource "google_project_iam_binding" "secrets_manager_access" {
+  role    = "roles/secretmanager.secretAccessor"
+  members = [
+    "serviceAccount:${google_service_account.toronto_gke_sa.email}"
+  ]
 }
-
-resource "google_project_iam_binding" "toronto_gke_sa_binding_secrets_user_access" {
-  project = "pingdirectory-358917"
-  members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
-  role = "roles/secretmanager.versions.access"
-}
-
