@@ -53,13 +53,13 @@ resource "google_project_iam_binding" "toronto_gke_sa_binding_projectIamAdmin" {
 }
 
 
-resource "google_secret_manager_secret_iam_member" "example" {
+resource "google_secret_manager_secret_iam_member" "iam_secrets_gcp_secrets" {
   secret_id  = "*"
-  role       = "roles/secretmanager.visecretAccessor ewer"
+  role       = "roles/secretmanager.visecretAccessor"
   member     = "serviceAccount:${google_service_account.toronto_gke_sa.email}"
 }
 
-resource "google_project_iam_binding" "example" {
+resource "google_project_iam_binding" "iam_secrets_gcp_secrets_binding" {
   project = "my-project"
   members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
   role = "roles/secretmanager.secretAccessor "
