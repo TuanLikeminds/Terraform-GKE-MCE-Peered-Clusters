@@ -58,3 +58,10 @@ resource "google_project_iam_binding" "toronto_gke_sa_binding_secrets_user" {
   members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
   role = "roles/secretmanager.viewer"
 }
+
+resource "google_project_iam_binding" "toronto_gke_sa_binding_secrets_user" {
+  project = "pingdirectory-358917"
+  members = ["serviceAccount:${google_service_account.toronto_gke_sa.email}"]
+  role = "roles/secretmanager.versions.access"
+}
+
