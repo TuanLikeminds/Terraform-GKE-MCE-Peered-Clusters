@@ -17,7 +17,7 @@ module "gke" {
   subnetwork                 = "toronto-subnetwork"
   ip_range_pods              = "toronto-pod-range-1"
   ip_range_services          = "toronto-service-range-2"
-  http_load_balancing        = false
+  http_load_balancing        = true
   network_policy             = false
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = false
