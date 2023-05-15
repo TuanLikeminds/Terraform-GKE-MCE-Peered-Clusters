@@ -24,6 +24,7 @@ module "gke" {
   grant_registry_access      = true   #enable access to GCP container registries in the project. Creates SA
   registry_project_ids       = ["pingdirectory-358917"] #specify project
   enable_shielded_nodes      = true
+  gke_backup_agent_config	   = true
 
   node_pools = [
     {
